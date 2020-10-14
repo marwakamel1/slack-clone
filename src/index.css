@@ -1,13 +1,262 @@
+* {
+  margin: 0;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --slack-color: #3f0f40;
+  overflow: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.app_body {
+  display: flex;
+  height: 100vh;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  background-color: var(--slack-color);
+  color: white;
+}
+
+.header_left {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  flex: 0.3;
+}
+
+.header_left > .MuiSvgIcon-root {
+  margin-left: auto;
+  margin-right: 30px;
+}
+.header_search {
+  flex: 0.4;
+  background-color: #421f44;
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  color: gray;
+  border: 1px gray solid;
+  border-radius: 6px;
+}
+
+.header_search > input {
+  background-color: transparent;
+  border: none;
+  min-width: 35vw;
+  text-align: center;
+  color: gray;
+}
+
+.header_search > input:focus {
+  outline: none;
+}
+
+.header_right {
+  flex: 0.3;
+  float: right;
+}
+
+.header_right > .MuiSvgIcon-root {
+  float: right;
+  margin-right: 20px;
+}
+
+.sidebar {
+  background-color: var(--slack-color);
+  max-width: 260px;
+  border-top: 1px solid #49274b;
+  color: white;
+  flex: 0.3;
+  height: 92vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-width: 150px;
+}
+
+.sidebar_header {
+  display: flex;
+  border-bottom: 1px solid #49274b;
+  padding: 13px;
+  padding-bottom: 10px;
+}
+
+.sidebar_header > .MuiSvgIcon-root {
+  padding: 8px;
+  color: #49274b;
+  font-size: 18px;
+  background-color: white;
+  border-radius: 999px;
+}
+.sidebar_info {
+  flex: 1;
+}
+
+.sidebar_info > h2 {
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+
+.sidebar_info > h3 {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.sidebar_info > h3 > .MuiSvgIcon-root {
+  margin-right: 1px;
+  font-size: 14px;
+  color: green;
+}
+
+.sidebarOption {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  font-size: 12px;
+  padding-left: 2px;
+}
+
+.sidebarOption:hover {
+  background-color: #340e36;
+  opacity: 0.9;
+}
+
+.sidebarOption_icon {
+  padding: 10px;
+  font-size: 15px !important;
+}
+
+.channel {
+  padding: 10px 0;
+  display: block;
+}
+
+.hash {
+  padding: 10px;
+}
+
+.sidebarOption > h3 {
+  font-weight: 500;
+}
+
+.sidebar > hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #49274b;
+}
+
+.chat {
+  flex: 0.7;
+  overflow-y: scroll;
+  padding-bottom: 150px;
+  flex-grow: 1;
+}
+
+.chat_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+  padding: 20px;
+}
+
+.channelName {
+  display: flex;
+  text-transform: lowercase;
+}
+.channelName > .MuiSvgIcon-root {
+  margin-left: 10px;
+  font-size: 18px;
+}
+.chat_headerRight > p {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.chat_headerRight > p > .MuiSvgIcon-root {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.message > img {
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+.message_info {
+  padding-left: 10px;
+}
+.message_info > h4 > span {
+  color: gray;
+  font-weight: 300;
+  font-size: 13px;
+}
+.login {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #f8f8f8;
+}
+.loginContainer > img {
+  object-fit: contain;
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+.loginContainer > button {
+  margin-top: 50px;
+  text-transform: inherit !important;
+  background-color: #0a8d48;
+  color: white;
+}
+.loginContainer {
+  padding: 100px;
+  text-align: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.chatInput {
+  border-radius: 20px;
+}
+.chatInput > form {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.chatInput > form > input {
+  position: fixed;
+  bottom: 30px;
+  width: 70%;
+  border: 1px solid gray;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.chatInput > form > button {
+  display: none !important;
+}
+.displayChannels {
+  display: none;
 }
